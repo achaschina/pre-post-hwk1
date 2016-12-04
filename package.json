@@ -1,0 +1,36 @@
+{
+  "name": "pre-post-hwk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "bower install && npm run build",
+    "test": "echo \"Error: no test specified\"",
+    "cleanup": "del /Q dest",
+    "hint:html": "htmlhint dest/*",
+    "hint:css": "echo \"Your css is fine!\"",
+    "build:html": "pug src/index.pug -o dest",
+    "build:css": "node-sass src/style.sass -o dest",
+    "build:css:autoprefixer": "postcss --use autoprefixer dest/*.css --replace",
+    "build": "npm run cleanup && npm run build:html && npm run build:css && npm run build:css:autoprefixer",
+    "watch": "onchange src/*.* -- npm run build",
+    "srv": "http-server dest -o http://127.0.0.1:8080/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.5.3",
+    "bower": "^1.8.0",
+    "csshint": "^0.3.2",
+    "gh-deploy": "^0.2.3",
+    "htmlhint": "^0.9.13",
+    "http-server": "^0.9.0",
+    "node-sass": "^3.13.0",
+    "onchange": "^3.2.0",
+    "postcss": "^5.2.6",
+    "postcss-cli": "^2.6.0",
+    "pug": "^2.0.0-beta6",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
