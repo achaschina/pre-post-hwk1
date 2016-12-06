@@ -6,7 +6,7 @@
   "scripts": {
     "install": "bower install && npm run build",
     "test": "echo \"Error: no test specified\"",
-    "cleanup": "del /Q dest",
+    "cleanup": "node_modules/.bin/rimraf dest",
     "copy": "cp -r src/img dest/img",
     "hint:html": "htmlhint dest/*",
     "hint:css": "echo \"Your css is fine!\"",
